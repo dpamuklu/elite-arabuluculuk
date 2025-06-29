@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Professional legal color scheme */
+    --background: 0 0% 100%;
+    --foreground: 215 25% 15%;
+    --primary: 221 83% 53%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 98%;
+    --secondary-foreground: 222 47% 11%;
+    --accent: 43 96% 56%;
+    --accent-foreground: 0 0% 100%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --border: 214 32% 91%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+  }
+
+  .dark {
+    --background: 222 84% 5%;
+    --foreground: 210 40% 98%;
+    --primary: 217 91% 60%;
+    --secondary: 217 33% 18%;
+    --secondary-foreground: 210 40% 98%;
+    --accent: 43 96% 56%;
+    --accent-foreground: 0 0% 100%;
+    --muted: 217 33% 18%;
+    --muted-foreground: 215 20% 65%;
+    --border: 217 33% 18%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold text-navy-900;
+    line-height: 1.2;
+  }
+
+  p {
+    @apply text-navy-700 leading-relaxed;
+  }
+
+  /* Turkish text optimization */
+  .turkish-text {
+    text-rendering: optimizeLegibility;
+    font-kerning: normal;
+    font-variant-ligatures: common-ligatures;
+  }
+
+  /* Legal document styles */
+  .legal-text {
+    @apply font-legal text-legal leading-relaxed text-navy-800;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+}
+
+/* Print styles for legal documents */
+@media print {
+  @page {
+    margin: 2cm;
+    size: A4;
+  }
+  
+  * {
+    color: black !important;
+    background: white !important;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+  
+  .legal-text {
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section-padding {
+    @apply py-16 lg:py-24;
+  }
+  
+  .card-shadow {
+    @apply shadow-legal hover:shadow-legal-lg transition-shadow duration-300;
+  }
+}
