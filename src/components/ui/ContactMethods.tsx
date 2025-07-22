@@ -79,8 +79,9 @@ const ContactMethodsGrid = React.forwardRef<HTMLDivElement, ContactMethodsGridPr
       <ContactMethod
         icon={<MapPin className="w-6 h-6" />}
         title="Adres"
-        value="İstanbul, Türkiye"
-        description="Merkezi konum"
+        value="Silivri, İstanbul"
+        href="https://maps.app.goo.gl/b3RUqmfSzJ4NKqnQ9"
+        description="Piri Mehmet Paşa Mah. No:18/A"
       />
       
       <ContactMethod

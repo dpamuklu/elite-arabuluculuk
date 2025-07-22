@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Menu, X, Scale, Phone, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/Button";
@@ -55,8 +56,15 @@ export default function Header() {
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-3 group">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary-600 to-primary-800 rounded-xl flex items-center justify-center group-hover:shadow-lg transition-shadow">
-                <Scale className="h-7 w-7 text-white" />
+              <div className="relative w-14 h-14 flex-shrink-0">
+                <Image
+                  src="/images/darklogo.png"
+                  alt="Elite Arabuluculuk Logo"
+                  width={56}
+                  height={56}
+                  className="object-contain group-hover:scale-105 transition-transform"
+                  priority
+                />
               </div>
               <div className="flex flex-col">
                 <span className="text-2xl font-bold text-navy-900 turkish-text">

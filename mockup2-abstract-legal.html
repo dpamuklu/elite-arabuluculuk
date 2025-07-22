@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Arabuluculuk - Abstract Legal Mockup</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            overflow-x: hidden;
+            background: #0f172a;
+        }
+
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        /* Background image layer */
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /* Professional office/legal themed background */
+            background-image: 
+                url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80'),
+                url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=1920&q=80'),
+                url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 0;
+        }
+        
+        /* Fallback gradient if image doesn't load */
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(15, 23, 42, 0.98) 100%),
+                linear-gradient(90deg, #1e3a8a 0%, #0f172a 100%);
+            z-index: 1;
+        }
+
+        /* Scales of justice watermark */
+        .justice-watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            opacity: 0.03;
+            background: radial-gradient(circle, rgba(217, 119, 6, 0.2) 0%, transparent 70%);
+            z-index: 2;
+        }
+
+        .justice-watermark::before,
+        .justice-watermark::after {
+            content: '';
+            position: absolute;
+            background: #d97706;
+            opacity: 0.3;
+        }
+
+        .justice-watermark::before {
+            width: 400px;
+            height: 2px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .justice-watermark::after {
+            width: 2px;
+            height: 300px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -100px);
+        }
+
+        /* Geometric patterns */
+        .geometric-patterns {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 3;
+        }
+
+        .pattern {
+            position: absolute;
+            border: 1px solid rgba(217, 119, 6, 0.2);
+            background: transparent;
+        }
+
+        .pattern-1 {
+            width: 200px;
+            height: 200px;
+            top: 10%;
+            right: 15%;
+            transform: rotate(45deg);
+            border-radius: 0.5rem;
+            animation: rotate 30s linear infinite;
+        }
+
+        .pattern-2 {
+            width: 150px;
+            height: 150px;
+            bottom: 15%;
+            left: 10%;
+            transform: rotate(30deg);
+            animation: rotate 25s linear infinite reverse;
+        }
+
+        .pattern-3 {
+            width: 100px;
+            height: 100px;
+            top: 40%;
+            left: 5%;
+            border-radius: 50%;
+            border-color: rgba(217, 119, 6, 0.3);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        .pattern-4 {
+            width: 250px;
+            height: 250px;
+            bottom: 10%;
+            right: 5%;
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            background: rgba(217, 119, 6, 0.05);
+            border: none;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { 
+                transform: scale(1);
+                opacity: 0.3;
+            }
+            50% { 
+                transform: scale(1.1);
+                opacity: 0.6;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-30px); }
+        }
+
+        /* Navy gradient overlay - removed as it's now in ::after */
+
+        .hero-content {
+            position: relative;
+            z-index: 4;
+            text-align: center;
+            padding: 2rem;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .legal-badge {
+            display: inline-block;
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .legal-badge-content {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem 2rem;
+            background: rgba(217, 119, 6, 0.1);
+            border: 1px solid rgba(217, 119, 6, 0.3);
+            border-radius: 0.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .scale-icon {
+            width: 24px;
+            height: 24px;
+            position: relative;
+        }
+
+        .scale-icon::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: #d97706;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+
+        .scale-icon::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 20px;
+            background: #d97706;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .badge-text {
+            color: #fbbf24;
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 300;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        h1 strong {
+            font-weight: 700;
+            background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.125rem, 2vw, 1.375rem);
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 3rem;
+            line-height: 1.7;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+        }
+
+        .cta-container {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .cta-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+            color: #ffffff;
+            padding: 1rem 2.5rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(217, 119, 6, 0.3);
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(217, 119, 6, 0.4);
+        }
+
+        .cta-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            color: #ffffff;
+            padding: 1rem 2.5rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 0.5rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fbbf24;
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                padding: 1.5rem;
+            }
+
+            .cta-container {
+                flex-direction: column;
+                width: 100%;
+                max-width: 300px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .cta-primary,
+            .cta-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .pattern-1,
+            .pattern-3 {
+                display: none;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero-section">
+        <div class="justice-watermark"></div>
+        
+        <div class="geometric-patterns">
+            <div class="pattern pattern-1"></div>
+            <div class="pattern pattern-2"></div>
+            <div class="pattern pattern-3"></div>
+            <div class="pattern pattern-4"></div>
+        </div>
+        
+        
+        <div class="hero-content">
+            <div class="legal-badge">
+                <div class="legal-badge-content">
+                    <div class="scale-icon"></div>
+                    <span class="badge-text">Adalet Bakanlığı Onaylı</span>
+                </div>
+            </div>
+            
+            <h1>Profesyonel <strong>Arabuluculuk Hizmetleri</strong></h1>
+            
+            <p class="hero-subtitle">
+                Uyuşmazlıklarınızı adil, hızlı ve ekonomik bir şekilde çözmek için uzman arabulucularımızla çalışın.
+            </p>
+            
+            <div class="cta-container">
+                <a href="#" class="cta-primary">
+                    Hemen Başvur
+                    <span style="font-size: 1.25rem;">→</span>
+                </a>
+                <a href="#" class="cta-secondary">
+                    Detaylı Bilgi Al
+                    <span style="font-size: 1.25rem;">📞</span>
+                </a>
+            </div>
+            
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Yıl Deneyim</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5K+</div>
+                    <div class="stat-label">Çözülen Dava</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">%95</div>
+                    <div class="stat-label">Başarı Oranı</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Destek</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

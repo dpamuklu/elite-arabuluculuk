@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Scale, Phone, Mail, MapPin, Clock, Award, Shield, Users } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { TypographyH3, TypographyP, TypographySmall } from "@/components/ui/Typography";
@@ -34,8 +35,14 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-700 rounded-xl flex items-center justify-center">
-                <Scale className="h-7 w-7 text-white" />
+              <div className="relative w-14 h-14 flex-shrink-0 bg-white rounded-xl p-1">
+                <Image
+                  src="/images/darklogo.png"
+                  alt="Elite Arabuluculuk Logo"
+                  width={48}
+                  height={48}
+                  className="object-contain w-full h-full"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="text-2xl font-bold text-white turkish-text">
@@ -172,10 +179,13 @@ export default function Footer() {
                 <MapPin className="w-5 h-5 text-gold-400 mt-0.5" />
                 <div>
                   <span className="text-navy-300 block">
-                    Levent, Büyükdere Cad. No:123
+                    Piri Mehmet Paşa Mah.
                   </span>
                   <span className="text-navy-300 block">
-                    34330 Beşiktaş/İstanbul
+                    Recep Silahtaroğlu Sok. No:18/A
+                  </span>
+                  <span className="text-navy-300 block">
+                    34570 Silivri/İstanbul
                   </span>
                 </div>
               </div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Scale, Users, Award, Clock, CheckCircle, ArrowRight, Star, Shield } from "lucide-react";
 import { Button, GoldButton } from "@/components/ui/Button";
 import { TypographyH1, TypographyH2, TypographyH3, TypographyP, TypographyLead } from "@/components/ui/Typography";
@@ -88,52 +89,83 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-navy-900 via-primary-800 to-navy-800 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative container section-padding">
-          <div className="max-w-4xl mx-auto text-center">
-            <TypographyH1 className="text-white mb-6 text-4xl lg:text-6xl">
-              Profesyonel Arabuluculuk Hizmetleri
-            </TypographyH1>
-            <TypographyLead className="text-navy-100 mb-8 text-xl lg:text-2xl">
-              Uyuşmazlıklarınızı adil, hızlı ve ekonomik bir şekilde çözmek için
-              uzman arabulucularımızla çalışın.
-            </TypographyLead>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <GoldButton size="lg" asChild>
-                <Link href="/iletisim">
-                  Ücretsiz Danışmanlık Al
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Link>
-              </GoldButton>
-              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-navy-900" asChild>
-                <Link href="/hizmetler">Hizmetlerimizi İnceleyin</Link>
-              </Button>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-navy-950">
+        {/* CSS Pattern Background */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(30,58,138,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(30,58,138,0.1)_1px,transparent_1px)] bg-[size:60px_40px]"></div>
+        
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(30,64,175,0.85)_0%,rgba(15,23,42,0.95)_70%)]"></div>
+        
+        {/* Justice Watermark */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-[0.03]">
+          <div className="relative w-full h-full bg-[radial-gradient(circle,rgba(217,119,6,0.2)_0%,transparent_70%)]">
+            <div className="absolute w-[400px] h-[2px] bg-gold-500 opacity-30 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+            <div className="absolute w-[2px] h-[300px] bg-gold-500 opacity-30 top-1/2 left-1/2 -translate-x-1/2 -translate-y-[100px]"></div>
+          </div>
+        </div>
+        
+        {/* Geometric Patterns */}
+        <div className="absolute inset-0">
+          <div className="absolute w-[200px] h-[200px] top-[10%] right-[15%] rotate-45 rounded-lg border border-gold-500/20 animate-spin-slow"></div>
+          <div className="absolute w-[150px] h-[150px] bottom-[15%] left-[10%] rotate-[30deg] border border-gold-500/20 animate-spin-slow-reverse"></div>
+          <div className="absolute w-[100px] h-[100px] top-[40%] left-[5%] rounded-full border border-gold-500/30 animate-pulse"></div>
+          <div className="absolute w-[250px] h-[250px] bottom-[10%] right-[5%] bg-gold-500/5 clip-path-diamond animate-float"></div>
+        </div>
+        
+        <div className="relative z-10 container text-center px-4">
+          {/* Logo Badge */}
+          <div className="inline-flex items-center gap-6 mb-10 px-10 py-6 bg-white/10 border border-white/20 rounded-xl backdrop-blur-sm">
+            <div className="relative w-20 h-20 flex-shrink-0 bg-white/90 rounded-xl p-2">
+              <Image
+                src="/images/darklogo.png"
+                alt="Elite Arabuluculuk Logo"
+                width={64}
+                height={64}
+                className="object-contain w-full h-full"
+              />
             </div>
-
-            {/* Trust Indicators */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-navy-700">
-              <div className="text-center">
-                <Shield className="w-8 h-8 text-gold-400 mx-auto mb-2" />
-                <div className="text-sm text-navy-200">Adalet Bakanlığı</div>
-                <div className="text-xs text-navy-300">Onaylı Arabulucu</div>
-              </div>
-              <div className="text-center">
-                <Star className="w-8 h-8 text-gold-400 mx-auto mb-2" />
-                <div className="text-sm text-navy-200">15+ Yıl</div>
-                <div className="text-xs text-navy-300">Deneyim</div>
-              </div>
-              <div className="text-center">
-                <Users className="w-8 h-8 text-gold-400 mx-auto mb-2" />
-                <div className="text-sm text-navy-200">1000+</div>
-                <div className="text-xs text-navy-300">Başarılı Vaka</div>
-              </div>
-              <div className="text-center">
-                <Award className="w-8 h-8 text-gold-400 mx-auto mb-2" />
-                <div className="text-sm text-navy-200">%95</div>
-                <div className="text-xs text-navy-300">Başarı Oranı</div>
-              </div>
+            <div className="text-left">
+              <div className="text-gold-400 text-base font-semibold tracking-wider uppercase">Adalet Bakanlığı Onaylı</div>
+              <div className="text-white/80 text-sm">Elite Arabuluculuk</div>
+            </div>
+          </div>
+          
+          <h1 className="text-5xl lg:text-7xl font-light text-white mb-6 leading-tight">
+            Profesyonel <span className="font-bold bg-gradient-to-r from-gold-400 to-gold-600 bg-clip-text text-transparent">Arabuluculuk Hizmetleri</span>
+          </h1>
+          
+          <p className="text-lg lg:text-xl text-white/80 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+            Uyuşmazlıklarınızı adil, hızlı ve ekonomik bir şekilde çözmek için uzman arabulucularımızla çalışın.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+            <Link href="/iletisim" className="inline-flex items-center gap-2 bg-gradient-to-r from-gold-600 to-gold-700 text-white px-8 py-4 text-lg font-semibold rounded-lg hover:from-gold-700 hover:to-gold-800 transition-all hover:shadow-xl hover:shadow-gold-500/20 hover:-translate-y-0.5">
+              Hemen Başvur
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+            <Link href="/hizmetler" className="inline-flex items-center gap-2 bg-transparent text-white px-8 py-4 text-lg font-semibold rounded-lg border-2 border-white/30 hover:bg-white/10 hover:border-white/50 transition-all">
+              Detaylı Bilgi Al
+              <span className="text-xl">📞</span>
+            </Link>
+          </div>
+          
+          {/* Stats Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
+            <div className="text-center p-4 bg-white/5 rounded-lg backdrop-blur-sm border border-white/10">
+              <div className="text-3xl font-bold text-gold-400 mb-1">15+</div>
+              <div className="text-sm text-white/70 uppercase tracking-wide">Yıl Deneyim</div>
+            </div>
+            <div className="text-center p-4 bg-white/5 rounded-lg backdrop-blur-sm border border-white/10">
+              <div className="text-3xl font-bold text-gold-400 mb-1">5K+</div>
+              <div className="text-sm text-white/70 uppercase tracking-wide">Çözülen Dava</div>
+            </div>
+            <div className="text-center p-4 bg-white/5 rounded-lg backdrop-blur-sm border border-white/10">
+              <div className="text-3xl font-bold text-gold-400 mb-1">%95</div>
+              <div className="text-sm text-white/70 uppercase tracking-wide">Başarı Oranı</div>
+            </div>
+            <div className="text-center p-4 bg-white/5 rounded-lg backdrop-blur-sm border border-white/10">
+              <div className="text-3xl font-bold text-gold-400 mb-1">24/7</div>
+              <div className="text-sm text-white/70 uppercase tracking-wide">Destek</div>
             </div>
           </div>
         </div>
