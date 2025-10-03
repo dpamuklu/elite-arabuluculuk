@@ -216,7 +216,7 @@ export default function SurecimizPage() {
           <TypographyH2 className="text-white mb-4">
             Süreçimizi Yakından Tanımak İster Misiniz?
           </TypographyH2>
-          <TypographyP className="text-primary-100 text-lg mb-8 max-w-2xl mx-auto">
+          <TypographyP className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
             Ücretsiz danışmanlık görüşmesinde sürecimizi detaylarıyla anlatıyor, 
             sorularınızı yanıtlıyoruz.
           </TypographyP>

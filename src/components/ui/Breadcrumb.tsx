@@ -56,12 +56,16 @@ export function generateBreadcrumbs(pathname: string): BreadcrumbType[] {
     'surecimiz': 'Sürecimiz',
     'iletisim': 'İletişim',
     'blog': 'Blog',
-    'gizlilik-politikasi': 'Gizlilik Politikası',
+    'gizlilik': 'Gizlilik Politikası',
     'kullanim-kosullari': 'Kullanım Koşulları',
+    'cerez-politikasi': 'Çerez Politikası',
+    'kvkk': 'KVKK',
     'ticari': 'Ticari Arabuluculuk',
+    'kira': 'Kira Arabuluculuğu',
     'aile': 'Aile Arabuluculuğu',
     'is-hukuku': 'İş Hukuku',
     'tuketici': 'Tüketici Hakları',
+    'sikca-sorulan-sorular': 'Sıkça Sorulan Sorular',
   };
 
   let currentPath = '';

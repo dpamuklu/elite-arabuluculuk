@@ -1,15 +1,28 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Scale, Phone, Mail, MapPin, Clock, Award, Shield, Users } from "lucide-react";
+import {
+  Scale,
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  Award,
+  Shield,
+  Users,
+} from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { TypographyH3, TypographyP, TypographySmall } from "@/components/ui/Typography";
+import {
+  TypographyH3,
+  TypographyP,
+  TypographySmall,
+} from "@/components/ui/Typography";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const services = [
     { name: "Ticari Arabuluculuk", href: "/hizmetler/ticari" },
-    { name: "Aile Arabuluculuğu", href: "/hizmetler/aile" },
+    { name: "Kira Arabuluculuğu", href: "/hizmetler/kira" },
     { name: "İş Hukuku", href: "/hizmetler/is-hukuku" },
     { name: "Tüketici Hakları", href: "/hizmetler/tuketici" },
   ];
@@ -22,8 +35,12 @@ export default function Footer() {
   ];
 
   const stats = [
-    { icon: <Users className="w-5 h-5" />, value: "1000+", label: "Başarılı Vaka" },
-    { icon: <Award className="w-5 h-5" />, value: "15+", label: "Yıl Deneyim" },
+    {
+      icon: <Users className="w-5 h-5" />,
+      value: "2k+",
+      label: "Başarılı Vaka",
+    },
+    { icon: <Award className="w-5 h-5" />, value: "10+", label: "Yıl Deneyim" },
     { icon: <Shield className="w-5 h-5" />, value: "100%", label: "Gizlilik" },
   ];
 
@@ -53,10 +70,11 @@ export default function Footer() {
                 </span>
               </div>
             </div>
-            
+
             <TypographyP className="text-navy-300 mb-6 max-w-sm">
-              Türkiye'nin önde gelen arabuluculuk firması olarak, 
-              uyuşmazlıklarınızı adil, hızlı ve güvenilir bir şekilde çözmek için buradayız.
+              Türkiye'nin önde gelen arabuluculuk firması olarak,
+              uyuşmazlıklarınızı adil, hızlı ve güvenilir bir şekilde çözmek
+              için buradayız.
             </TypographyP>
 
             {/* Stats */}
@@ -66,24 +84,30 @@ export default function Footer() {
                   <div className="flex justify-center mb-2 text-gold-400">
                     {stat.icon}
                   </div>
-                  <div className="text-lg font-bold text-white">{stat.value}</div>
-                  <div className="text-xs text-navy-300 turkish-text">{stat.label}</div>
+                  <div className="text-lg font-bold text-white">
+                    {stat.value}
+                  </div>
+                  <div className="text-xs text-navy-300 turkish-text">
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </div>
 
             <Button variant="gold" size="sm" className="w-full" asChild>
-              <Link href="/randevu">Ücretsiz Danışmanlık</Link>
+              <Link href="/sikca-sorulan-sorular">Sıkça Sorulan Sorular</Link>
             </Button>
           </div>
 
           {/* Services */}
           <div>
-            <TypographyH3 className="text-white mb-6">Hizmetlerimiz</TypographyH3>
+            <TypographyH3 className="text-white mb-6">
+              Hizmetlerimiz
+            </TypographyH3>
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service.name}>
-                  <Link 
+                  <Link
                     href={service.href}
                     className="text-navy-300 hover:text-gold-400 transition-colors turkish-text"
                   >
@@ -99,7 +123,7 @@ export default function Footer() {
             <TypographyH3 className="text-white mb-6">Kurumsal</TypographyH3>
             <ul className="space-y-3">
               <li>
-                <Link 
+                <Link
                   href="/hakkimizda"
                   className="text-navy-300 hover:text-gold-400 transition-colors turkish-text"
                 >
@@ -107,7 +131,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link 
+                <Link
                   href="/ekibimiz"
                   className="text-navy-300 hover:text-gold-400 transition-colors turkish-text"
                 >
@@ -115,7 +139,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link 
+                <Link
                   href="/referanslar"
                   className="text-navy-300 hover:text-gold-400 transition-colors turkish-text"
                 >
@@ -123,7 +147,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link 
+                <Link
                   href="/blog"
                   className="text-navy-300 hover:text-gold-400 transition-colors turkish-text"
                 >
@@ -131,8 +155,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link 
-                  href="/sss"
+                <Link
+                  href="/sikca-sorulan-sorular"
                   className="text-navy-300 hover:text-gold-400 transition-colors turkish-text"
                 >
                   Sık Sorulan Sorular
@@ -148,7 +172,7 @@ export default function Footer() {
               <div className="flex items-start space-x-3">
                 <Phone className="w-5 h-5 text-gold-400 mt-0.5" />
                 <div>
-                  <a 
+                  <a
                     href="tel:+90XXXXXXXXXX"
                     className="text-navy-300 hover:text-gold-400 transition-colors block"
                   >
@@ -163,11 +187,11 @@ export default function Footer() {
               <div className="flex items-start space-x-3">
                 <Mail className="w-5 h-5 text-gold-400 mt-0.5" />
                 <div>
-                  <a 
-                    href="mailto:info@elitearabulucu.com"
+                  <a
+                    href="mailto:info@elitearabuluculuk.com"
                     className="text-navy-300 hover:text-gold-400 transition-colors block"
                   >
-                    info@elitearabulucu.com
+                    info@elitearabuluculuk.com
                   </a>
                   <TypographySmall className="text-navy-400">
                     24 saat içinde yanıt
@@ -226,14 +250,10 @@ export default function Footer() {
                 ))}
               </div>
             </div>
-            
+
             <div className="flex items-center space-x-4">
               <TypographySmall className="text-navy-400">
-                Arabuluculuk Sicil No: 12345
-              </TypographySmall>
-              <div className="w-px h-4 bg-navy-700"></div>
-              <TypographySmall className="text-navy-400">
-                Adalet Bakanlığı Onaylı
+                Adalet Bk. siciline kayıtlı ruhsatlı arabulucu
               </TypographySmall>
             </div>
           </div>

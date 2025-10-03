@@ -12,7 +12,7 @@ import { GoldButton } from "@/components/ui/Button";
 
 const serviceOptions = [
   { value: "ticari", label: "Ticari Arabuluculuk" },
-  { value: "aile", label: "Aile Arabuluculuğu" },
+  { value: "kira", label: "Kira Arabuluculuğu" },
   { value: "is-hukuku", label: "İş Hukuku Arabuluculuğu" },
   { value: "tuketici", label: "Tüketici Arabuluculuğu" },
   { value: "diger", label: "Diğer" },
@@ -135,7 +135,7 @@ export function ContactForm() {
             {...register("kvkkConsent")}
           />
           <span className="text-sm text-navy-700 turkish-text">
-            <a href="/gizlilik-politikasi" target="_blank" className="text-primary hover:underline">
+            <a href="/kvkk" target="_blank" className="text-primary hover:underline">
               KVKK Aydınlatma Metni
             </a>
             &apos;ni okudum ve kişisel verilerimin işlenmesini kabul ediyorum.

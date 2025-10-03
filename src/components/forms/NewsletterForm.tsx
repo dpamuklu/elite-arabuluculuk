@@ -64,8 +64,8 @@ export function NewsletterForm() {
             className="mt-1 w-4 h-4 text-primary focus:ring-primary border-gray-300 rounded"
             {...register("kvkkConsent")}
           />
-          <span className="text-xs text-white/80">
-            <a href="/gizlilik-politikasi" target="_blank" className="underline hover:text-white">
+          <span className="text-xs text-white/90">
+            <a href="/kvkk" target="_blank" className="underline hover:text-white">
               KVKK Aydınlatma Metni
             </a>
             &apos;ni kabul ediyorum.

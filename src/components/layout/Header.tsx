@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Menu, X, Scale, Phone, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
@@ -10,19 +10,34 @@ import { cn } from "@/lib/utils";
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const servicesMenuRef = useRef<HTMLDivElement | null>(null);
+
+  // Close services submenu on outside click (desktop)
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        servicesMenuRef.current &&
+        !servicesMenuRef.current.contains(event.target as Node)
+      ) {
+        setIsServicesOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const navigation = [
     { name: "Ana Sayfa", href: "/" },
-    { 
-      name: "Hizmetlerimiz", 
+    {
+      name: "Hizmetlerimiz",
       href: "/hizmetler",
       hasSubmenu: true,
       submenu: [
         { name: "Ticari Arabuluculuk", href: "/hizmetler/ticari" },
-        { name: "Aile Arabuluculuğu", href: "/hizmetler/aile" },
+        { name: "Kira Arabuluculuğu", href: "/hizmetler/kira" },
         { name: "İş Hukuku Arabuluculuğu", href: "/hizmetler/is-hukuku" },
         { name: "Tüketici Arabuluculuğu", href: "/hizmetler/tuketici" },
-      ]
+      ],
     },
     { name: "Hakkımızda", href: "/hakkimizda" },
     { name: "İletişim", href: "/iletisim" },
@@ -35,15 +50,20 @@ export default function Header() {
         <div className="container">
           <div className="flex justify-between items-center py-2 text-sm">
             <div className="flex items-center space-x-6">
-              <a href="tel:+90XXXXXXXXXX" className="flex items-center space-x-2 hover:text-gold-400 transition-colors">
+              <a
+                href="tel:+90XXXXXXXXXX"
+                className="flex items-center space-x-2 hover:text-gold-400 transition-colors"
+              >
                 <Phone className="w-4 h-4" />
                 <span>+90 (XXX) XXX XX XX</span>
               </a>
-              <span className="text-navy-300">Pazartesi - Cuma: 09:00 - 18:00</span>
+              <span className="text-navy-300">
+                Pazartesi - Cuma: 09:00 - 18:00
+              </span>
             </div>
             <div className="hidden sm:flex items-center space-x-4">
               <Button variant="gold" size="sm" asChild>
-                <Link href="/randevu">Ücretsiz Danışmanlık</Link>
+                <Link href="/sikca-sorulan-sorular">Sıkça Sorulan Sorular</Link>
               </Button>
             </div>
           </div>
@@ -84,22 +104,30 @@ export default function Header() {
                 {item.hasSubmenu ? (
                   <div
                     className="group"
+                    ref={servicesMenuRef}
                     onMouseEnter={() => setIsServicesOpen(true)}
                     onMouseLeave={() => setIsServicesOpen(false)}
                   >
-                    <button className="flex items-center space-x-1 text-navy-700 hover:text-primary-700 transition-colors duration-200 font-medium turkish-text">
+                    <button
+                      className="flex items-center space-x-1 text-navy-700 hover:text-primary-700 transition-colors duration-200 font-medium turkish-text"
+                      onClick={() => setIsServicesOpen((v) => !v)}
+                      aria-haspopup="menu"
+                      aria-expanded={isServicesOpen}
+                    >
                       <span>{item.name}</span>
                       <ChevronDown className="w-4 h-4" />
                     </button>
-                    
+
                     {/* Submenu */}
-                    <div className={cn(
-                      "absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-legal-lg border border-border",
-                      "transform transition-all duration-200 origin-top-left",
-                      isServicesOpen 
-                        ? "opacity-100 scale-100 translate-y-0" 
-                        : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
-                    )}>
+                    <div
+                      className={cn(
+                        "absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-legal-lg border border-border",
+                        "transform transition-all duration-200 origin-top-left",
+                        isServicesOpen
+                          ? "opacity-100 scale-100 translate-y-0"
+                          : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
+                      )}
+                    >
                       <div className="py-2">
                         {item.submenu?.map((subItem) => (
                           <Link
@@ -131,7 +159,7 @@ export default function Header() {
               <Link href="/iletisim">İletişim</Link>
             </Button>
             <Button variant="default" size="sm" asChild>
-              <Link href="/randevu">Randevu Al</Link>
+              <Link href="/iletisim">Randevu Al</Link>
             </Button>
           </div>
 
@@ -142,7 +170,11 @@ export default function Header() {
               className="text-navy-700 hover:text-primary-700 p-2"
               aria-label="Menüyü aç/kapat"
             >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </button>
           </div>
         </div>
@@ -176,14 +208,14 @@ export default function Header() {
                   )}
                 </div>
               ))}
-              
+
               {/* Mobile CTA Buttons */}
               <div className="px-4 pt-4 space-y-3 border-t border-border">
                 <Button variant="outline" size="sm" className="w-full" asChild>
                   <Link href="/iletisim">İletişim</Link>
                 </Button>
                 <Button variant="default" size="sm" className="w-full" asChild>
-                  <Link href="/randevu">Randevu Al</Link>
+                  <Link href="/iletisim">Randevu Al</Link>
                 </Button>
               </div>
             </div>

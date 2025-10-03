@@ -16,6 +16,11 @@ export const metadata: Metadata = {
   description: "Türkiye'nin en deneyimli arabuluculuk firması. Ticari ve hukuki uyuşmazlıklar için profesyonel arabuluculuk hizmetleri.",
   keywords: "arabulucu, arabuluculuk, hukuk, uyuşmazlık çözümü, mediasyon, istanbul arabulucu",
   authors: [{ name: "Elite Arabuluculuk" }],
+  icons: {
+    icon: "/images/whitelogo.png",
+    shortcut: "/images/whitelogo.png",
+    apple: "/images/whitelogo.png",
+  },
   openGraph: {
     title: "Elite Arabuluculuk - Profesyonel Arabuluculuk Hizmetleri",
     description: "Türkiye'nin en deneyimli arabuluculuk firması. Ticari ve hukuki uyuşmazlıklar için profesyonel arabuluculuk hizmetleri.",

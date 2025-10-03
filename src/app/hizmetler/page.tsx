@@ -9,8 +9,8 @@ import type { ServiceCategory } from "@/types/content";
 
 export const metadata: Metadata = {
   title: "Hizmetlerimiz - Profesyonel Arabuluculuk | Elite Arabuluculuk",
-  description: "Ticari, aile, iş hukuku ve tüketici arabuluculuğu hizmetlerimiz. Uzman arabulucularımızla uyuşmazlıklarınızı hızla çözün.",
-  keywords: ["arabuluculuk hizmetleri", "ticari arabuluculuk", "aile arabuluculuğu", "iş hukuku arabuluculuğu", "tüketici arabuluculuğu"],
+  description: "Ticari, kira, iş hukuku ve tüketici arabuluculuğu hizmetlerimiz. Uzman arabulucularımızla uyuşmazlıklarınızı hızla çözün.",
+  keywords: ["arabuluculuk hizmetleri", "ticari arabuluculuk", "kira arabuluculuğu", "iş hukuku arabuluculuğu", "tüketici arabuluculuğu"],
   openGraph: {
     title: "Arabuluculuk Hizmetlerimiz | Elite Arabuluculuk",
     description: "Profesyonel arabuluculuk hizmetlerimiz ile uyuşmazlıklarınızı adil ve hızlı şekilde çözün.",
@@ -50,32 +50,32 @@ export default function HizmetlerPage() {
       href: "/hizmetler/ticari"
     },
     {
-      id: "aile",
-      title: "Aile Arabuluculuğu",
-      description: "Boşanma, velayet ve nafaka konularında uzmanlaşmış arabuluculuk",
+      id: "kira",
+      title: "Kira Arabuluculuğu",
+      description: "Kiracı–ev sahibi arasında kira tespiti, tahliye ve alacak uyuşmazlıklarının çözümlenmesi",
       icon: "users",
       features: [
-        "Boşanma süreçleri",
-        "Velayet düzenlemeleri",
-        "Nafaka hesaplamaları",
-        "Mal paylaşımı",
-        "Çocukla görüşme düzenlemeleri"
+        "Kira tespiti ve uyarlama",
+        "Tahliye protokolü ve süre yönetimi",
+        "Birikmiş kira/alacak uzlaşısı",
+        "Sözleşme ihlalleri ve tadilat uyuşmazlıkları",
+        "Aidat ve yan gider anlaşmazlıkları"
       ],
       benefits: [
-        "Çocuk odaklı çözümler",
-        "Duygusal travmanın azalması",
-        "Ekonomik çözümler",
-        "Geleceğe yönelik planlama"
+        "Hızlı ve maliyet etkin çözüm",
+        "Taraf ilişkilerinin korunması",
+        "Gizlilik ve esneklik",
+        "Uygulanabilir protokoller"
       ],
       process: [
-        "Bireysel ön görüşmeler",
-        "Çocuk yararı değerlendirmesi",
-        "Ortak oturumlar",
-        "Anlaşma belgesi düzenleme"
+        "Taraf ön görüşmeleri",
+        "Sözleşme ve delil incelemesi",
+        "Ortak müzakere oturumları",
+        "Anlaşma metni ve protokol"
       ],
-      duration: "4-8 hafta",
+      duration: "2-4 hafta",
       cost: "Mahkeme sürecinin %40'ı",
-      href: "/hizmetler/aile"
+      href: "/hizmetler/kira"
     },
     {
       id: "is-hukuku",
@@ -274,7 +274,7 @@ export default function HizmetlerPage() {
             <TypographyH2 className="text-white mb-4">
               Hangi Hizmete İhtiyacınız Olduğundan Emin Değil Misiniz?
             </TypographyH2>
-            <TypographyP className="text-primary-100 text-lg mb-8 max-w-2xl mx-auto">
+            <TypographyP className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
               Uzman arabulucularımız size en uygun çözümü bulmak için ücretsiz ön değerlendirme yapıyor.
             </TypographyP>
             
@@ -301,7 +301,7 @@ export default function HizmetlerPage() {
               Neden Bizim Hizmetlerimizi Tercih Etmelisiniz?
             </TypographyH2>
             <TypographyP className="text-lg max-w-3xl mx-auto">
-              15 yılı aşkın deneyimimiz ve 1000'den fazla başarılı vakamızla 
+              10 yılı aşkın deneyimimiz ve 2k+ başarılı vakamızla 
               size en kaliteli arabuluculuk hizmetini sunuyoruz.
             </TypographyP>
           </div>
@@ -323,7 +323,7 @@ export default function HizmetlerPage() {
               </div>
               <TypographyH3 className="mb-4">Kanıtlanmış Başarı</TypographyH3>
               <TypographyP>
-                %95 başarı oranımız ve müşteri memnuniyetimiz ile sektörde öncü konumdayız.
+                Yüksek müşteri memnuniyetiyle sektörde öncü konumdayız.
               </TypographyP>
             </div>
 
