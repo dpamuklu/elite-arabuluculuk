@@ -156,9 +156,6 @@ export default function Header() {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" size="sm" asChild>
-              <Link href="/iletisim">İletişim</Link>
-            </Button>
             <Button variant="default" size="sm" asChild>
               <Link href="/iletisim">Randevu Al</Link>
             </Button>
