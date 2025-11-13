@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { Menu, X, Scale, Phone, ChevronDown } from "lucide-react";
+import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 
@@ -40,6 +40,7 @@ export default function Header() {
       ],
     },
     { name: "Hakkımızda", href: "/hakkimizda" },
+    { name: "Referanslar", href: "/referanslar" },
     { name: "İletişim", href: "/iletisim" },
   ];
 
@@ -51,11 +52,11 @@ export default function Header() {
           <div className="flex justify-between items-center py-2 text-sm">
             <div className="flex items-center space-x-6">
               <a
-                href="tel:+90XXXXXXXXXX"
+                href="tel:+905411569376"
                 className="flex items-center space-x-2 hover:text-gold-400 transition-colors"
               >
                 <Phone className="w-4 h-4" />
-                <span>+90 (XXX) XXX XX XX</span>
+                <span>+90 541 156 93 76</span>
               </a>
               <span className="text-navy-300">
                 Pazartesi - Cuma: 09:00 - 18:00

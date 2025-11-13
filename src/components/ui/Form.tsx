@@ -254,7 +254,12 @@ const RadioGroup = React.forwardRef<HTMLFieldSetElement, RadioGroupProps>(
     const errorId = error ? `${groupId}-error` : undefined;
 
     return (
-      <fieldset ref={ref} className={cn("space-y-3", className)} aria-describedby={errorId}>
+      <fieldset
+        ref={ref}
+        className={cn("space-y-3", className)}
+        aria-describedby={errorId}
+        aria-invalid={error ? "true" : undefined}
+      >
         {label && (
           <legend className="text-sm font-medium text-navy-900 turkish-text">
             {label}
@@ -278,7 +283,6 @@ const RadioGroup = React.forwardRef<HTMLFieldSetElement, RadioGroupProps>(
                     "focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
                     error && "border-red-500 focus:ring-red-500"
                   )}
-                  aria-invalid={error ? "true" : undefined}
                 />
                 <label
                   htmlFor={radioId}

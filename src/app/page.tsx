@@ -6,17 +6,13 @@ import {
   Award,
   Clock,
   CheckCircle,
-  ArrowRight,
-  Star,
-  Shield,
+  ArrowRight
 } from "lucide-react";
 import { Button, GoldButton } from "@/components/ui/Button";
 import {
-  TypographyH1,
   TypographyH2,
   TypographyH3,
   TypographyP,
-  TypographyLead,
 } from "@/components/ui/Typography";
 import {
   ServiceCard,
@@ -103,6 +99,7 @@ export default function Home() {
       author: "Boajing Yang",
       role: "CEO ",
       company: "Mekotek A.Ş.",
+      companyHref: "https://www.mekotek.com.tr/en/",
       rating: 5,
     },
     {
@@ -111,6 +108,7 @@ export default function Home() {
       author: "İ. Cem İskar",
       role: "İK Müdürü",
       company: "Betafence A.Ş.",
+      companyHref: "https://www.betafence.com.tr/",
       rating: 5,
     },
   ];
@@ -209,6 +207,55 @@ export default function Home() {
               <div className="text-sm text-white/70 uppercase tracking-wide">
                 Destek
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Office Showcase */}
+      <section className="section-padding bg-secondary">
+        <div className="container grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <TypographyH2 className="mb-4">Ofisimizden Bir Kare</TypographyH2>
+            <TypographyP className="text-lg">
+              Silivri&apos;deki modern ofisimizde yüz yüze görüşmelere ev sahipliği
+              yapıyoruz. Rahat ve güvenli ortamımız, tarafların yapıcı diyalog
+              kurmasına yardımcı olacak şekilde tasarlandı.
+            </TypographyP>
+            <TypographyP className="mt-6">
+              İlk toplantılarınızı ister çevrim içi ister ofisimizde
+              gerçekleştirebilirsiniz. Ekip arkadaşlarımız sizi karşılamak ve
+              süreci adım adım yönlendirmek için hazır.
+            </TypographyP>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                href="/iletisim"
+                className="inline-flex items-center gap-2 bg-white text-primary-800 px-6 py-3 rounded-lg font-semibold shadow-legal hover:shadow-legal-lg transition-all"
+              >
+                Ziyaret Planlayın
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="https://maps.app.goo.gl/b3RUqmfSzJ4NKqnQ9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-primary-200 text-primary-800 hover:bg-white transition-all"
+              >
+                Haritada Görüntüle
+              </Link>
+            </div>
+          </div>
+          <div className="relative">
+            <div className="absolute -inset-4 bg-gold-500/10 rounded-3xl blur-lg" aria-hidden="true"></div>
+            <div className="relative overflow-hidden rounded-3xl shadow-legal-lg border border-white/60">
+              <Image
+                src="/images/ofis.jpg"
+                alt="Elite Arabuluculuk ofisinden görünüm"
+                width={1200}
+                height={800}
+                className="w-full h-full object-cover"
+                priority
+              />
             </div>
           </div>
         </div>
@@ -361,6 +408,7 @@ export default function Home() {
                 author={testimonial.author}
                 role={testimonial.role}
                 company={testimonial.company}
+                companyHref={testimonial.companyHref}
                 rating={testimonial.rating}
               />
             ))}
@@ -389,10 +437,12 @@ export default function Home() {
             <Button
               variant="outline"
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-primary-800"
+              className="border-white bg-transparent text-white hover:bg-white hover:text-primary-800"
               asChild
             >
-              <Link href="/hakkimizda">Hakkımızda Daha Fazla</Link>
+              <Link href="/hakkimizda" className="inline-flex items-center justify-center gap-2">
+                Hakkımızda Daha Fazla
+              </Link>
             </Button>
           </div>
         </div>

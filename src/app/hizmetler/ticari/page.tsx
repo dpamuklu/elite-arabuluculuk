@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { Briefcase, Scale, FileText, Shield, CheckCircle, ArrowRight } from "lucide-react";
+import { Briefcase, Scale, FileText, Shield, ArrowRight } from "lucide-react";
 import { Breadcrumb, generateBreadcrumbs } from "@/components/ui/Breadcrumb";
-import { TypographyH1, TypographyH2, TypographyH3, TypographyP } from "@/components/ui/Typography";
+import { TypographyH1, TypographyH2, TypographyP } from "@/components/ui/Typography";
 import { Button, GoldButton } from "@/components/ui/Button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
 
@@ -109,7 +109,12 @@ export default function TicariPage() {
               <GoldButton size="lg" asChild>
                 <Link href="/iletisim">Görüşme Talep Et <ArrowRight className="w-5 h-5 ml-2"/></Link>
               </GoldButton>
-              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary-800" asChild>
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-white bg-transparent text-white hover:bg-white hover:text-primary-800"
+                asChild
+              >
                 <Link href="/surecimiz">Sürecimizi İnceleyin</Link>
               </Button>
             </div>
@@ -119,4 +124,3 @@ export default function TicariPage() {
     </div>
   );
 }
-

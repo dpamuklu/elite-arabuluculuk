@@ -56,6 +56,7 @@ export function generateBreadcrumbs(pathname: string): BreadcrumbType[] {
     'surecimiz': 'Sürecimiz',
     'iletisim': 'İletişim',
     'blog': 'Blog',
+    'referanslar': 'Referanslar',
     'gizlilik': 'Gizlilik Politikası',
     'kullanim-kosullari': 'Kullanım Koşulları',
     'cerez-politikasi': 'Çerez Politikası',

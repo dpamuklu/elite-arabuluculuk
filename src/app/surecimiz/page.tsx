@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { Users, FileText, MessageSquare, CheckCircle, Clock, ArrowRight, Phone } from "lucide-react";
-import { TypographyH1, TypographyH2, TypographyH3, TypographyP, TypographyLead } from "@/components/ui/Typography";
+import { TypographyH1, TypographyH2, TypographyP, TypographyLead } from "@/components/ui/Typography";
 import { Button, GoldButton } from "@/components/ui/Button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
 import { Breadcrumb, generateBreadcrumbs } from "@/components/ui/Breadcrumb";
@@ -228,7 +228,12 @@ export default function SurecimizPage() {
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Link>
             </GoldButton>
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary-800" asChild>
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-white bg-transparent text-white hover:bg-white hover:text-primary-800"
+              asChild
+            >
               <Link href="/hizmetler">Hizmetlerimizi İnceleyin</Link>
             </Button>
           </div>

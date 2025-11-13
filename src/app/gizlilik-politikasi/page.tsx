@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { Shield, Eye, Lock, UserCheck } from "lucide-react";
-import { TypographyH1, TypographyH2, TypographyH3, TypographyP, TypographyLegal } from "@/components/ui/Typography";
+import { TypographyH1, TypographyH3, TypographyP, TypographyLegal } from "@/components/ui/Typography";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
 import { Breadcrumb, generateBreadcrumbs } from "@/components/ui/Breadcrumb";
 
@@ -65,14 +65,14 @@ export default function GizlilikPolitikasiPage() {
               <CardContent>
                 <TypographyLegal>
                   <p className="mb-4">
-                    6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") uyarınca, 
-                    kişisel verilerinizin veri sorumlusu Elite Arabuluculuk Hizmetleri'dir.
+                    6698 sayılı Kişisel Verilerin Korunması Kanunu (&quot;KVKK&quot;) uyarınca,
+                    kişisel verilerinizin veri sorumlusu Elite Arabuluculuk Hizmetleri&apos;dir.
                   </p>
                   <p>
                     <strong>İletişim Bilgileri:</strong><br />
                     Adres: Levent, Büyükdere Cad. No:123, 34330 Beşiktaş/İstanbul<br />
                     E-posta: kvkk@elitearabulucu.com<br />
-                    Telefon: +90 (XXX) XXX XX XX
+                    Telefon: +90 541 156 93 76
                   </p>
                 </TypographyLegal>
               </CardContent>
@@ -135,7 +135,7 @@ export default function GizlilikPolitikasiPage() {
               </CardHeader>
               <CardContent>
                 <TypographyLegal>
-                  <p className="mb-4">Kişisel verileriniz KVKK'nın 5. maddesinde belirtilen aşağıdaki hukuki dayanaklar çerçevesinde işlenmektedir:</p>
+                  <p className="mb-4">Kişisel verileriniz KVKK&apos;nın 5. maddesinde belirtilen aşağıdaki hukuki dayanaklar çerçevesinde işlenmektedir:</p>
                   <ul className="list-disc ml-6 space-y-2">
                     <li>Açık rızanız</li>
                     <li>Hukuki yükümlülüğün yerine getirilmesi</li>
@@ -178,7 +178,7 @@ export default function GizlilikPolitikasiPage() {
               </CardHeader>
               <CardContent>
                 <TypographyLegal>
-                  <p className="mb-4">KVKK'nın 11. maddesi uyarınca aşağıdaki haklara sahipsiniz:</p>
+                  <p className="mb-4">KVKK&apos;nın 11. maddesi uyarınca aşağıdaki haklara sahipsiniz:</p>
                   <ul className="list-disc ml-6 space-y-2 mb-6">
                     <li>Kişisel verilerinizin işlenip işlenmediğini öğrenme</li>
                     <li>İşlenen kişisel verileriniz hakkında bilgi talep etme</li>

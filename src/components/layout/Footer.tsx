@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import {
-  Scale,
   Phone,
   Mail,
   MapPin,
@@ -72,7 +71,7 @@ export default function Footer() {
             </div>
 
             <TypographyP className="text-navy-300 mb-6 max-w-sm">
-              Türkiye'nin önde gelen arabuluculuk firması olarak,
+              Türkiye&apos;nin önde gelen arabuluculuk firması olarak,
               uyuşmazlıklarınızı adil, hızlı ve güvenilir bir şekilde çözmek
               için buradayız.
             </TypographyP>
@@ -132,26 +131,10 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/ekibimiz"
-                  className="text-navy-300 hover:text-gold-400 transition-colors turkish-text"
-                >
-                  Ekibimiz
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="/referanslar"
                   className="text-navy-300 hover:text-gold-400 transition-colors turkish-text"
                 >
                   Referanslar
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/blog"
-                  className="text-navy-300 hover:text-gold-400 transition-colors turkish-text"
-                >
-                  Blog
                 </Link>
               </li>
               <li>
@@ -173,10 +156,10 @@ export default function Footer() {
                 <Phone className="w-5 h-5 text-gold-400 mt-0.5" />
                 <div>
                   <a
-                    href="tel:+90XXXXXXXXXX"
+                    href="tel:+905411569376"
                     className="text-navy-300 hover:text-gold-400 transition-colors block"
                   >
-                    +90 (XXX) XXX XX XX
+                    +90 541 156 93 76
                   </a>
                   <TypographySmall className="text-navy-400">
                     Acil Hat: 7/24 Erişilebilir

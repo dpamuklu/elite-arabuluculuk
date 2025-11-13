@@ -285,7 +285,12 @@ export default function HizmetlerPage() {
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Link>
               </GoldButton>
-              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary-800" asChild>
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-white bg-transparent text-white hover:bg-white hover:text-primary-800"
+                asChild
+              >
                 <Link href="/surecimiz">Sürecimizi İnceleyin</Link>
               </Button>
             </div>

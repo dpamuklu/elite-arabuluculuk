@@ -179,7 +179,7 @@ export default function IletisimPage() {
           <div className="text-center mb-12">
             <TypographyH2 className="mb-4">Konumumuz</TypographyH2>
             <TypographyP className="text-lg max-w-2xl mx-auto">
-              Silivri'de merkezi konumda bulunan ofisimizde yüz yüze görüşmeler
+              Silivri&apos;de merkezi konumda bulunan ofisimizde yüz yüze görüşmeler
               için randevu alabilirsiniz.
             </TypographyP>
           </div>

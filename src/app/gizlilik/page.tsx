@@ -35,7 +35,7 @@ export default function GizlilikPage() {
 
           <TypographyH2 className="mb-3">Çerezler</TypographyH2>
           <TypographyP className="mb-4">
-            Deneyiminizi iyileştirmek için çerezler kullanabiliriz. Ayrıntılar için Çerez Politikası'na bakınız.
+            Deneyiminizi iyileştirmek için çerezler kullanabiliriz. Ayrıntılar için Çerez Politikası&apos;na bakınız.
           </TypographyP>
 
           <TypographyH2 className="mb-3">Güvenlik</TypographyH2>
@@ -52,4 +52,3 @@ export default function GizlilikPage() {
     </div>
   );
 }
-

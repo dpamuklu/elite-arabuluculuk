@@ -14,7 +14,7 @@ interface WhatsAppButtonProps {
 
 export function WhatsAppButton({ 
   message = "Merhaba, Elite Arabuluculuk hizmetleri hakkında bilgi almak istiyorum.",
-  phoneNumber = "905551234567", // Replace with actual number
+  phoneNumber = "905411569376", // Replace with actual number
   className = "",
   size = "md",
   variant = "default",
@@ -46,7 +46,7 @@ interface FloatingWhatsAppProps {
 
 export function FloatingWhatsApp({ 
   message = "Merhaba, Elite Arabuluculuk hizmetleri hakkında bilgi almak istiyorum.",
-  phoneNumber = "905551234567" // Replace with actual number
+  phoneNumber = "905411569376" // Replace with actual number
 }: FloatingWhatsAppProps) {
   const handleWhatsAppClick = () => {
     const encodedMessage = encodeURIComponent(message);

@@ -6,7 +6,6 @@ import {
   Users,
   Scale,
   CheckCircle,
-  Star,
   GraduationCap,
   ArrowRight,
 } from "lucide-react";
@@ -52,11 +51,10 @@ export default function HakkimizdaPage() {
   ];
 
   const credentials = [
-    "Adalet Bk. siciline kayıtlı ruhsatlı arabulucu",
-    "Türkiye Arabulucular Derneği Üyesi",
-    "Uluslararası Arabuluculuk Merkezi Sertifikası",
-    "Kira Arabuluculuğu Uzmanlık Sertifikası",
+    "Adalet Bakanlığı resmî siciline kayıtlı ruhsatlı arabulucu",
     "Ticari Arabuluculuk Uzmanlık Sertifikası",
+    "İş Hukuku Arabulucuğu Uzmanlık Sertifikası",
+    "Kira Hukuku Arabuluculuğu Uzmanlık Sertifikası",
   ];
 
   const expertise = [
@@ -94,7 +92,7 @@ export default function HakkimizdaPage() {
               Elite Arabuluculuk Hakkında
             </TypographyH1>
             <TypographyLead className="mb-8">
-              10 yılı aşkın deneyimimiz ve 2k+ başarılı vakamızla Türkiye'nin
+              10 yılı aşkın deneyimimiz ve 2k+ başarılı vakamızla Türkiye&apos;nin
               önde gelen arabuluculuk firmasıyız.
             </TypographyLead>
 
@@ -288,7 +286,7 @@ export default function HakkimizdaPage() {
             <Button
               variant="outline"
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-primary-800"
+              className="border-white bg-transparent text-white hover:bg-white hover:text-primary-800"
               asChild
             >
               <Link href="/surecimiz">Sürecimizi Öğrenin</Link>

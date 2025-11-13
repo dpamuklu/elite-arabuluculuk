@@ -74,8 +74,8 @@ const ContactMethodsGrid = React.forwardRef<
     <ContactMethod
       icon={<Phone className="w-6 h-6" />}
       title="Telefon"
-      value="+90 (555) 123 45 67"
-      href="tel:+905551234567"
+      value="+90 541 156 93 76"
+      href="tel:+905411569376"
       description="Haftanın 7 günü, 09:00 - 18:00"
     />
 
@@ -90,8 +90,8 @@ const ContactMethodsGrid = React.forwardRef<
     <ContactMethod
       icon={<MessageCircle className="w-6 h-6" />}
       title="WhatsApp"
-      value="+90 (555) 123 45 67"
-      href="https://wa.me/905551234567?text=Merhaba, Elite Arabuluculuk hizmetleri hakkında bilgi almak istiyorum."
+      value="+90 541 156 93 76"
+      href="https://wa.me/905411569376?text=Merhaba, Elite Arabuluculuk hizmetleri hakkında bilgi almak istiyorum."
       description="Hızlı mesajlaşma için"
     />
 
@@ -146,7 +146,7 @@ const QuickContactCard = React.forwardRef<
     <CardContent className="space-y-4">
       <div className="flex flex-col sm:flex-row gap-3">
         <ClickToCallButton
-          phoneNumber="905551234567"
+          phoneNumber="905411569376"
           variant="white"
           size="lg"
           className="w-full sm:w-auto"
@@ -155,10 +155,10 @@ const QuickContactCard = React.forwardRef<
         </ClickToCallButton>
 
         <WhatsAppButton
-          phoneNumber="905551234567"
+          phoneNumber="905411569376"
           variant="outline"
           size="lg"
-          className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-primary-800"
+          className="w-full sm:w-auto border-white bg-transparent text-white hover:bg-white hover:text-primary-800"
           message="Merhaba, Elite Arabuluculuk hizmetleri hakkında ücretsiz danışmanlık almak istiyorum."
         >
           WhatsApp
@@ -258,11 +258,11 @@ const EmergencyContact = React.forwardRef<
         </p>
         <div className="mt-4">
           <ClickToCallButton
-            phoneNumber="905551234567"
+            phoneNumber="905411569376"
             className="bg-red-600 hover:bg-red-700 text-white"
             size="sm"
           >
-            Acil Hat: +90 (555) 123 45 67
+            Acil Hat: +90 541 156 93 76
           </ClickToCallButton>
         </div>
       </div>

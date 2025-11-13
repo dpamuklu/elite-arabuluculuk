@@ -43,7 +43,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
-        <FloatingWhatsApp phoneNumber="905551234567" />
+        <FloatingWhatsApp phoneNumber="905411569376" />
       </body>
     </html>
   );
