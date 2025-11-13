@@ -297,7 +297,7 @@ export default function SikcaSorulanSorularPage() {
         </div>
       </section>
 
-      <section className="section-padding bg-secondary">
+      <section className="section-padding bg-accent">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
             {quickFacts.map((fact) => {

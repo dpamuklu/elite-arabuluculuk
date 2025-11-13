@@ -6,7 +6,9 @@ import {
   Award,
   Clock,
   CheckCircle,
-  ArrowRight
+  ArrowRight,
+  Gavel,
+  Headphones,
 } from "lucide-react";
 import { Button, GoldButton } from "@/components/ui/Button";
 import {
@@ -116,7 +118,7 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-navy-950">
+      <section className="relative overflow-hidden bg-navy-950 py-16 sm:py-20 lg:py-0 lg:min-h-screen flex items-center">
         {/* CSS Pattern Background */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(30,58,138,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(30,58,138,0.1)_1px,transparent_1px)] bg-[size:60px_40px]"></div>
 
@@ -139,73 +141,97 @@ export default function Home() {
           <div className="absolute w-[250px] h-[250px] bottom-[10%] right-[5%] bg-gold-500/5 clip-path-diamond animate-float"></div>
         </div>
 
-        <div className="relative z-10 container text-center px-4">
-          {/* Logo Badge */}
-          <div className="inline-flex items-center gap-6 mb-10 px-10 py-6 bg-white/10 border border-white/20 rounded-xl backdrop-blur-sm">
-            <div className="relative w-20 h-20 flex-shrink-0 bg-white/90 rounded-xl p-2">
-              <Image
-                src="/images/whitelogo.png"
-                alt="Elite Arabuluculuk Logo"
-                width={64}
-                height={64}
-                className="object-contain w-full h-full"
-              />
-            </div>
-            <div className="text-left">
-              <div className="text-gold-400 text-base font-semibold tracking-wider uppercase">
-                Adalet Bakanlığı Onaylı
+        <div className="relative z-10 container px-4">
+          <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-12">
+            <div className="max-w-2xl w-full text-center lg:text-left">
+              <h1 className="text-5xl lg:text-7xl font-light text-white mb-6 leading-tight">
+                <span className="font-bold bg-gradient-to-r from-gold-400 to-gold-600 bg-clip-text text-transparent">
+                  Ticari ve İş Hukuku Uzman Arabuluculuk Hizmetleri
+                </span>
+              </h1>
+
+              <p className="text-lg lg:text-xl text-white/80 mb-12 font-light leading-relaxed">
+                Uyuşmazlıklarınızı hızlı, güvenilir ve mahkemeye gitmeden çözmek için
+                deneyimli ve lisanslı arabulucularımızla çalışın.
+              </p>
+
+              <div className="mb-12 flex justify-center lg:justify-start">
+                <div className="inline-block px-6 py-4 rounded-2xl border border-white/40 bg-navy-900/90 text-white shadow-xl shadow-black/40 text-left">
+                  <p className="text-xl font-semibold">Av. Berkay Ergün</p>
+                  <p className="text-sm tracking-wide text-white/95">
+                    Ticari Uyuşmazlıklar Arabulucusu – İstanbul
+                  </p>
+                </div>
               </div>
-              <div className="text-white/80 text-sm">Elite Arabuluculuk</div>
-            </div>
-          </div>
 
-          <h1 className="text-5xl lg:text-7xl font-light text-white mb-6 leading-tight">
-            Profesyonel{" "}
-            <span className="font-bold bg-gradient-to-r from-gold-400 to-gold-600 bg-clip-text text-transparent">
-              Arabuluculuk Hizmetleri
-            </span>
-          </h1>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-16">
+                <Link
+                  href="/iletisim"
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-gold-600 to-gold-700 text-white px-8 py-4 text-lg font-semibold rounded-lg hover:from-gold-700 hover:to-gold-800 transition-all hover:shadow-xl hover:shadow-gold-500/20 hover:-translate-y-0.5"
+                >
+                  Hemen Başvur
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+                <Link
+                  href="/hizmetler"
+                  className="inline-flex items-center gap-2 bg-transparent text-white px-8 py-4 text-lg font-semibold rounded-lg border-2 border-white/30 hover:bg-white/10 hover:border-white/50 transition-all"
+                >
+                  Detaylı Bilgi Al
+                  <span className="text-xl">📞</span>
+                </Link>
+              </div>
 
-          <p className="text-lg lg:text-xl text-white/80 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
-            Uyuşmazlıklarınızı adil, hızlı ve ekonomik bir şekilde çözmek için
-            uzman arabulucularımızla çalışın.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Link
-              href="/iletisim"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-gold-600 to-gold-700 text-white px-8 py-4 text-lg font-semibold rounded-lg hover:from-gold-700 hover:to-gold-800 transition-all hover:shadow-xl hover:shadow-gold-500/20 hover:-translate-y-0.5"
-            >
-              Hemen Başvur
-              <ArrowRight className="w-5 h-5" />
-            </Link>
-            <Link
-              href="/hizmetler"
-              className="inline-flex items-center gap-2 bg-transparent text-white px-8 py-4 text-lg font-semibold rounded-lg border-2 border-white/30 hover:bg-white/10 hover:border-white/50 transition-all"
-            >
-              Detaylı Bilgi Al
-              <span className="text-xl">📞</span>
-            </Link>
-          </div>
-
-          {/* Stats Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-6 max-w-2xl mx-auto">
-            <div className="text-center p-4 bg-white/5 rounded-lg backdrop-blur-sm border border-white/10">
-              <div className="text-3xl font-bold text-gold-400 mb-1">10+</div>
-              <div className="text-sm text-white/70 uppercase tracking-wide">
-                Yıl Deneyim
+              {/* Stats Grid */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-6 max-w-2xl mx-auto lg:mx-0">
+                <div className="text-center p-5 bg-white/5 rounded-2xl backdrop-blur-sm border border-white/10">
+                  <div className="w-12 h-12 mx-auto mb-3 rounded-full border border-white/20 bg-white/10 flex items-center justify-center text-gold-400">
+                    <Gavel className="w-6 h-6" aria-hidden="true" />
+                  </div>
+                  <div className="text-3xl font-bold text-white mb-1">10+</div>
+                  <div className="text-sm text-white/70 uppercase tracking-wide">
+                    Yıl Deneyim
+                  </div>
+                </div>
+                <div className="text-center p-5 bg-white/5 rounded-2xl backdrop-blur-sm border border-white/10">
+                  <div className="w-12 h-12 mx-auto mb-3 rounded-full border border-white/20 bg-white/10 flex items-center justify-center text-gold-400">
+                    <CheckCircle className="w-6 h-6" aria-hidden="true" />
+                  </div>
+                  <div className="text-3xl font-bold text-white mb-1">2000+</div>
+                  <div className="text-sm text-white/70 uppercase tracking-wide">
+                    Çözülen Uyuşmazlık
+                  </div>
+                </div>
+                <div className="text-center p-5 bg-white/5 rounded-2xl backdrop-blur-sm border border-white/10">
+                  <div className="w-12 h-12 mx-auto mb-3 rounded-full border border-white/20 bg-white/10 flex items-center justify-center text-gold-400">
+                    <Headphones className="w-6 h-6" aria-hidden="true" />
+                  </div>
+                  <div className="text-3xl font-bold text-white mb-1">7/24</div>
+                  <div className="text-sm text-white/70 uppercase tracking-wide">
+                    Destek
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="text-center p-4 bg-white/5 rounded-lg backdrop-blur-sm border border-white/10">
-              <div className="text-3xl font-bold text-gold-400 mb-1">2k+</div>
-              <div className="text-sm text-white/70 uppercase tracking-wide">
-                Çözülen Dava
+
+            {/* Hero Portrait */}
+            <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg mx-auto lg:mx-0">
+              <div className="absolute -inset-6 bg-gradient-to-br from-gold-500/30 via-gold-700/20 to-transparent blur-3xl opacity-60 pointer-events-none"></div>
+              <div className="relative rounded-[32px] overflow-hidden border border-white/15 bg-white/5 shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
+                <Image
+                  src="/images/hakkimizda-01.jpg"
+                  alt="Profesyonel arabulucunun portre fotoğrafı"
+                  width={640}
+                  height={800}
+                  className="w-full h-full object-cover"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/40 via-transparent"></div>
               </div>
-            </div>
-            <div className="text-center p-4 bg-white/5 rounded-lg backdrop-blur-sm border border-white/10">
-              <div className="text-3xl font-bold text-gold-400 mb-1">7/24</div>
-              <div className="text-sm text-white/70 uppercase tracking-wide">
-                Destek
+              <div className="absolute -bottom-8 -right-8 bg-navy-950/85 border border-white/20 text-white px-6 py-4 rounded-2xl backdrop-blur-md shadow-lg shadow-black/30">
+                <p className="text-sm uppercase tracking-[0.2em] text-white/80">
+                  Lisanslı
+                </p>
+                <p className="text-2xl font-semibold">Arabulucu</p>
               </div>
             </div>
           </div>
@@ -213,7 +239,7 @@ export default function Home() {
       </section>
 
       {/* Office Showcase */}
-      <section className="section-padding bg-secondary">
+      <section className="section-padding bg-accent">
         <div className="container grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <TypographyH2 className="mb-4">Ofisimizden Bir Kare</TypographyH2>
@@ -300,7 +326,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="section-padding bg-secondary">
+      <section className="section-padding bg-accent">
         <div className="container">
           <div className="text-center mb-16">
             <TypographyH2 className="mb-4">Hizmet Alanlarımız</TypographyH2>

@@ -61,7 +61,7 @@ export default function IletisimPage() {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="section-padding bg-secondary">
+      <section className="section-padding bg-accent">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Form */}

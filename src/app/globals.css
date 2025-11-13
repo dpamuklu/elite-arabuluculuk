@@ -5,32 +5,32 @@
 @layer base {
   :root {
     /* Professional legal color scheme */
-    --background: 0 0% 100%;
-    --foreground: 215 25% 15%;
-    --primary: 221 83% 53%;
+    --background: 216 33% 97%;
+    --foreground: 217 33% 14%;
+    --primary: 217 62% 12%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 210 40% 98%;
-    --secondary-foreground: 222 47% 11%;
-    --accent: 43 96% 56%;
-    --accent-foreground: 0 0% 100%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
-    --border: 214 32% 91%;
+    --secondary: 37 92% 61%;
+    --secondary-foreground: 217 33% 15%;
+    --accent: 216 24% 96%;
+    --accent-foreground: 217 33% 15%;
+    --muted: 215 28% 92%;
+    --muted-foreground: 217 20% 40%;
+    --border: 215 24% 85%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
   }
 
   .dark {
-    --background: 222 84% 5%;
-    --foreground: 210 40% 98%;
-    --primary: 217 91% 60%;
-    --secondary: 217 33% 18%;
-    --secondary-foreground: 210 40% 98%;
-    --accent: 43 96% 56%;
-    --accent-foreground: 0 0% 100%;
+    --background: 217 45% 8%;
+    --foreground: 210 40% 96%;
+    --primary: 216 55% 40%;
+    --secondary: 37 80% 50%;
+    --secondary-foreground: 210 40% 96%;
+    --accent: 216 28% 20%;
+    --accent-foreground: 210 40% 96%;
     --muted: 217 33% 18%;
-    --muted-foreground: 215 20% 65%;
-    --border: 217 33% 18%;
+    --muted-foreground: 215 20% 70%;
+    --border: 217 33% 25%;
     --destructive: 0 63% 31%;
     --destructive-foreground: 0 0% 100%;
   }

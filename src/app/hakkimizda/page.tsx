@@ -186,7 +186,7 @@ export default function HakkimizdaPage() {
       </section>
 
       {/* Expertise Areas */}
-      <section className="section-padding bg-secondary">
+      <section className="section-padding bg-accent">
         <div className="container">
           <div className="text-center mb-16">
             <TypographyH2 className="mb-4">Uzmanlık Alanlarımız</TypographyH2>
