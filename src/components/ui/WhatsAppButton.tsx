@@ -1,14 +1,14 @@
 "use client";
 
 import { MessageCircle } from "lucide-react";
-import { Button } from "./Button";
+import { Button, type ButtonProps } from "./Button";
 
 interface WhatsAppButtonProps {
   message?: string;
   phoneNumber?: string;
   className?: string;
-  size?: "sm" | "md" | "lg";
-  variant?: "default" | "gold" | "outline";
+  size?: ButtonProps["size"] | "md";
+  variant?: ButtonProps["variant"];
   children?: React.ReactNode;
 }
 
@@ -26,10 +26,13 @@ export function WhatsAppButton({
     window.open(whatsappUrl, "_blank");
   };
 
+  const normalizedSize: ButtonProps["size"] =
+    size === "md" || size === undefined ? "default" : size;
+
   return (
     <Button
       onClick={handleWhatsAppClick}
-      size={size}
+      size={normalizedSize}
       variant={variant}
       className={`${className}`}
     >

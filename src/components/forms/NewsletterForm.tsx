@@ -79,7 +79,7 @@ export function NewsletterForm() {
       <Button 
         type="submit" 
         variant="secondary"
-        size="md" 
+        size="lg" 
         className="w-full"
         disabled={isSubmitting}
       >
