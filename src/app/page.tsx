@@ -118,7 +118,7 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-navy-950 py-16 sm:py-20 lg:py-0 lg:min-h-screen flex items-center">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#050B17] via-[#07112A] to-[#0B1C3A] pt-28 md:pt-40 pb-16 sm:pb-20 lg:pb-24 lg:min-h-screen flex items-center">
         {/* CSS Pattern Background */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(30,58,138,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(30,58,138,0.1)_1px,transparent_1px)] bg-[size:60px_40px]"></div>
 
@@ -126,7 +126,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(30,64,175,0.85)_0%,rgba(15,23,42,0.95)_70%)]"></div>
 
         {/* Justice Watermark */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-[0.03]">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-[0.03] hidden md:block">
           <div className="relative w-full h-full bg-[radial-gradient(circle,rgba(217,119,6,0.2)_0%,transparent_70%)]">
             <div className="absolute w-[400px] h-[2px] bg-gold-500 opacity-30 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
             <div className="absolute w-[2px] h-[300px] bg-gold-500 opacity-30 top-1/2 left-1/2 -translate-x-1/2 -translate-y-[100px]"></div>
@@ -134,7 +134,7 @@ export default function Home() {
         </div>
 
         {/* Geometric Patterns */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 hidden md:block">
           <div className="absolute w-[200px] h-[200px] top-[10%] right-[15%] rotate-45 rounded-lg border border-gold-500/20 animate-spin-slow"></div>
           <div className="absolute w-[150px] h-[150px] bottom-[15%] left-[10%] rotate-[30deg] border border-gold-500/20 animate-spin-slow-reverse"></div>
           <div className="absolute w-[100px] h-[100px] top-[40%] left-[5%] rounded-full border border-gold-500/30 animate-pulse"></div>
@@ -144,37 +144,35 @@ export default function Home() {
         <div className="relative z-10 container px-4">
           <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-12">
             <div className="max-w-2xl w-full text-center lg:text-left">
-              <h1 className="text-5xl lg:text-7xl font-light text-white mb-6 leading-tight">
-                <span className="font-bold bg-gradient-to-r from-gold-400 to-gold-600 bg-clip-text text-transparent">
-                  Ticari ve İş Hukuku Uzman Arabuluculuk Hizmetleri
-                </span>
+              <h1 className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-bold leading-tight text-transparent bg-gradient-to-r from-gold-400 to-gold-600 bg-clip-text mb-6 font-display">
+                Ticari ve İş Hukuku Uzman Arabuluculuk Hizmetleri
               </h1>
 
-              <p className="text-lg lg:text-xl text-white/80 mb-12 font-light leading-relaxed">
+              <p className="text-base sm:text-lg lg:text-xl text-white/85 mb-10 font-light leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 Uyuşmazlıklarınızı hızlı, güvenilir ve mahkemeye gitmeden çözmek için
                 deneyimli ve lisanslı arabulucularımızla çalışın.
               </p>
 
               <div className="mb-12 flex justify-center lg:justify-start">
-                <div className="inline-block px-6 py-4 rounded-2xl border border-white/40 bg-navy-900/90 text-white shadow-xl shadow-black/40 text-left">
-                  <p className="text-xl font-semibold">Av. Berkay Ergün</p>
-                  <p className="text-sm tracking-wide text-white/95">
+                <div className="inline-block px-6 py-4 rounded-2xl border border-white/20 bg-white/5 text-white shadow-xl shadow-black/40 text-center md:text-left">
+                  <p className="text-lg font-semibold text-white/90">Av. Berkay Ergün</p>
+                  <p className="text-sm tracking-wide text-white/75">
                     Ticari Uyuşmazlıklar Arabulucusu – İstanbul
                   </p>
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-16">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-14">
                 <Link
                   href="/iletisim"
-                  className="inline-flex items-center gap-2 bg-gradient-to-r from-gold-600 to-gold-700 text-white px-8 py-4 text-lg font-semibold rounded-lg hover:from-gold-700 hover:to-gold-800 transition-all hover:shadow-xl hover:shadow-gold-500/20 hover:-translate-y-0.5"
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-gold-600 to-gold-700 text-white px-8 py-3 text-base font-semibold rounded-full hover:from-gold-700 hover:to-gold-800 transition-all hover:shadow-xl hover:shadow-gold-500/20 hover:-translate-y-0.5"
                 >
                   Hemen Başvur
                   <ArrowRight className="w-5 h-5" />
                 </Link>
                 <Link
                   href="/hizmetler"
-                  className="inline-flex items-center gap-2 bg-transparent text-white px-8 py-4 text-lg font-semibold rounded-lg border-2 border-white/30 hover:bg-white/10 hover:border-white/50 transition-all"
+                  className="inline-flex items-center gap-2 bg-transparent text-white px-8 py-3 text-base font-semibold rounded-full border border-white/30 hover:bg-white/10 hover:border-white/60 transition-all"
                 >
                   Detaylı Bilgi Al
                   <span className="text-xl">📞</span>
@@ -183,7 +181,7 @@ export default function Home() {
 
               {/* Stats Grid */}
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-6 max-w-2xl mx-auto lg:mx-0">
-                <div className="text-center p-5 bg-white/5 rounded-2xl backdrop-blur-sm border border-white/10">
+                <div className="text-center p-5 bg-white/5 rounded-2xl backdrop-blur-sm border border-white/15 max-w-xs w-full mx-auto">
                   <div className="w-12 h-12 mx-auto mb-3 rounded-full border border-white/20 bg-white/10 flex items-center justify-center text-gold-400">
                     <Gavel className="w-6 h-6" aria-hidden="true" />
                   </div>
@@ -192,7 +190,7 @@ export default function Home() {
                     Yıl Deneyim
                   </div>
                 </div>
-                <div className="text-center p-5 bg-white/5 rounded-2xl backdrop-blur-sm border border-white/10">
+                <div className="text-center p-5 bg-white/5 rounded-2xl backdrop-blur-sm border border-white/15 max-w-xs w-full mx-auto">
                   <div className="w-12 h-12 mx-auto mb-3 rounded-full border border-white/20 bg-white/10 flex items-center justify-center text-gold-400">
                     <CheckCircle className="w-6 h-6" aria-hidden="true" />
                   </div>
@@ -201,7 +199,7 @@ export default function Home() {
                     Çözülen Uyuşmazlık
                   </div>
                 </div>
-                <div className="text-center p-5 bg-white/5 rounded-2xl backdrop-blur-sm border border-white/10">
+                <div className="text-center p-5 bg-white/5 rounded-2xl backdrop-blur-sm border border-white/15 max-w-xs w-full mx-auto">
                   <div className="w-12 h-12 mx-auto mb-3 rounded-full border border-white/20 bg-white/10 flex items-center justify-center text-gold-400">
                     <Headphones className="w-6 h-6" aria-hidden="true" />
                   </div>

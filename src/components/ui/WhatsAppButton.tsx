@@ -60,10 +60,10 @@ export function FloatingWhatsApp({
   return (
     <button
       onClick={handleWhatsAppClick}
-      className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-200 group"
+      className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full p-3 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-200 group"
       aria-label="WhatsApp ile iletişime geç"
     >
-      <MessageCircle className="w-6 h-6" />
+      <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6" />
       <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-gray-900 text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200">
         WhatsApp ile yazın
       </span>

@@ -113,6 +113,10 @@
 }
 
 @layer utilities {
+  .font-display {
+    font-family: var(--font-display), "Playfair Display", ui-serif, serif;
+  }
+  
   /* Custom animations for hero section */
   @keyframes spin-slow {
     from {
