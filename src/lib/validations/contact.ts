@@ -13,6 +13,16 @@ export const validationMessages = {
   kvkk: "KVKK metnini kabul etmeniz gerekmektedir",
 };
 
+const normalizeTurkishPhone = (val: string): string => {
+  if (val.startsWith("0")) {
+    return val.substring(1);
+  }
+  if (val.startsWith("+90")) {
+    return val.substring(3);
+  }
+  return val;
+};
+
 // Main contact form schema
 export const contactFormSchema = z.object({
   name: z
@@ -28,16 +38,7 @@ export const contactFormSchema = z.object({
     .string()
     .min(1, validationMessages.required)
     .regex(turkishPhoneRegex, validationMessages.phone)
-    .transform((val) => {
-      // Normalize phone number
-      if (val.startsWith("0")) {
-        return val.substring(1);
-      }
-      if (val.startsWith("+90")) {
-        return val.substring(3);
-      }
-      return val;
-    }),
+    .transform(normalizeTurkishPhone),
   serviceType: z
     .string()
     .min(1, validationMessages.required),
@@ -65,10 +66,11 @@ export const quickConsultationSchema = z.object({
   phone: z
     .string()
     .min(1, validationMessages.required)
-    .regex(turkishPhoneRegex, validationMessages.phone),
-  preferredTime: z
-    .string()
-    .min(1, validationMessages.required),
+    .regex(turkishPhoneRegex, validationMessages.phone)
+    .transform(normalizeTurkishPhone),
+  preferredTime: z.enum(["morning", "afternoon", "evening", "anytime"], {
+    required_error: validationMessages.required,
+  }),
   kvkkConsent: z
     .boolean()
     .refine((val) => val === true, validationMessages.kvkk),
@@ -87,7 +89,8 @@ export const serviceInquirySchema = z.object({
   phone: z
     .string()
     .min(1, validationMessages.required)
-    .regex(turkishPhoneRegex, validationMessages.phone),
+    .regex(turkishPhoneRegex, validationMessages.phone)
+    .transform(normalizeTurkishPhone),
   serviceType: z
     .string()
     .min(1, validationMessages.required),

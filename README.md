@@ -20,6 +20,17 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Environment Variables
+
+Server actions that deliver form notifications expect the following values in `.env.local`:
+
+- `RESEND_API_KEY` – API key for the Resend email service.
+- `CONTACT_NOTIFICATION_EMAIL` – Recipient address for the main contact form submissions.
+- `QUICK_CONSULTATION_INBOX` – Recipient address for the quick consultation call-back workflow. You can also use `CONTACT_NOTIFICATION_EMAIL` as a fallback.
+- `NOTIFICATIONS_FROM_EMAIL` (optional) – Custom sender, e.g. `Elite Arabuluculuk <notifications@elitearabuluculuk.com>`.
+
+Restart the dev server after editing `.env.local`.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

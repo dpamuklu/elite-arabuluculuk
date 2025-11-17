@@ -1,16 +1,19 @@
 "use server";
 
 import { headers } from "next/headers";
-import { 
-  ContactFormData, 
-  QuickConsultationData, 
-  ServiceInquiryData, 
+import {
+  ContactFormData,
+  QuickConsultationData,
+  ServiceInquiryData,
   NewsletterData,
   contactFormSchema,
   quickConsultationSchema,
   serviceInquirySchema,
-  newsletterSchema
+  newsletterSchema,
 } from "@/lib/validations/contact";
+import { sendQuickConsultationNotification } from "@/lib/notifications/quick-consultation";
+import { sendContactNotification } from "@/lib/notifications/contact";
+import { NotificationError } from "@/lib/notifications/errors";
 
 // Rate limiting helper
 const rateLimitMap = new Map<string, number[]>();
@@ -50,6 +53,29 @@ async function getClientIp(): Promise<string> {
   return "unknown";
 }
 
+function formatPhoneNumber(phone: string): string {
+  const trimmed = phone.replace(/\s+/g, "");
+  if (trimmed.startsWith("+90")) {
+    return trimmed;
+  }
+  if (trimmed.startsWith("90")) {
+    return `+${trimmed}`;
+  }
+  if (trimmed.startsWith("0")) {
+    return `+90${trimmed.substring(1)}`;
+  }
+  return `+90${trimmed}`;
+}
+
+function logActionError(context: string, error: unknown) {
+  if (error instanceof Error) {
+    console.error(`${context}: ${error.message}`);
+    return;
+  }
+
+  console.error(context, error);
+}
+
 // Contact form submission
 export async function submitContactForm(data: ContactFormData) {
   try {
@@ -65,13 +91,16 @@ export async function submitContactForm(data: ContactFormData) {
       };
     }
     
-    // Format phone number
-    const formattedPhone = `+90${validatedData.phone}`;
+    const formattedPhone = formatPhoneNumber(validatedData.phone);
     
-    // TODO: Send email via Resend
-    console.log("Contact form submission:", {
-      ...validatedData,
+    await sendContactNotification({
+      name: validatedData.name,
+      email: validatedData.email,
       phone: formattedPhone,
+      serviceType: validatedData.serviceType,
+      subject: validatedData.subject,
+      message: validatedData.message,
+      kvkkConsent: validatedData.kvkkConsent,
       submittedAt: new Date().toISOString(),
       ip: clientIp,
     });
@@ -80,7 +109,15 @@ export async function submitContactForm(data: ContactFormData) {
     
     return { success: true };
   } catch (error) {
-    console.error("Contact form error:", error);
+    if (error instanceof NotificationError) {
+      logActionError("Contact form notification error", error);
+      return { 
+        success: false, 
+        error: "Mesaj gönderilirken bir hata oluştu. Lütfen daha sonra tekrar deneyiniz." 
+      };
+    }
+    
+    logActionError("Contact form error", error);
     
     if (error instanceof Error) {
       return { 
@@ -112,12 +149,13 @@ export async function submitQuickConsultation(data: QuickConsultationData) {
     }
     
     // Format phone number
-    const formattedPhone = `+90${validatedData.phone}`;
+    const formattedPhone = formatPhoneNumber(validatedData.phone);
     
-    // TODO: Send email notification
-    console.log("Quick consultation submission:", {
-      ...validatedData,
+    await sendQuickConsultationNotification({
+      name: validatedData.name,
       phone: formattedPhone,
+      preferredTime: validatedData.preferredTime,
+      kvkkConsent: validatedData.kvkkConsent,
       submittedAt: new Date().toISOString(),
       ip: clientIp,
     });
@@ -127,7 +165,11 @@ export async function submitQuickConsultation(data: QuickConsultationData) {
     
     return { success: true };
   } catch (error) {
-    console.error("Quick consultation error:", error);
+    if (error instanceof NotificationError) {
+      logActionError("Quick consultation notification error", error);
+    } else {
+      logActionError("Quick consultation error", error);
+    }
     return { 
       success: false, 
       error: "Form gönderilirken bir hata oluştu." 
@@ -139,7 +181,7 @@ export async function submitQuickConsultation(data: QuickConsultationData) {
 export async function submitServiceInquiry(data: ServiceInquiryData) {
   try {
     // Validate data
-    const validatedData = serviceInquirySchema.parse(data);
+    serviceInquirySchema.parse(data);
     
     // Check rate limit
     const clientIp = await getClientIp();
@@ -150,31 +192,13 @@ export async function submitServiceInquiry(data: ServiceInquiryData) {
       };
     }
     
-    // Format phone number
-    const formattedPhone = `+90${validatedData.phone}`;
-    
-    // Determine priority based on urgency
-    const priority = {
-      "very-urgent": "HIGH",
-      "urgent": "MEDIUM",
-      "normal": "NORMAL"
-    }[validatedData.urgency];
-    
     // TODO: Send email with priority flag
-    console.log("Service inquiry submission:", {
-      ...validatedData,
-      phone: formattedPhone,
-      priority,
-      submittedAt: new Date().toISOString(),
-      ip: clientIp,
-    });
-    
     // TODO: Save to database
     // TODO: Trigger notification for urgent cases
     
     return { success: true };
   } catch (error) {
-    console.error("Service inquiry error:", error);
+    logActionError("Service inquiry error", error);
     return { 
       success: false, 
       error: "Başvuru gönderilirken bir hata oluştu." 
@@ -186,7 +210,7 @@ export async function submitServiceInquiry(data: ServiceInquiryData) {
 export async function subscribeNewsletter(data: NewsletterData) {
   try {
     // Validate data
-    const validatedData = newsletterSchema.parse(data);
+    newsletterSchema.parse(data);
     
     // Check rate limit
     const clientIp = await getClientIp();
@@ -198,18 +222,12 @@ export async function subscribeNewsletter(data: NewsletterData) {
     }
     
     // TODO: Add to mailing list (Resend, Mailchimp, etc.)
-    console.log("Newsletter subscription:", {
-      ...validatedData,
-      subscribedAt: new Date().toISOString(),
-      ip: clientIp,
-    });
-    
     // TODO: Send welcome email
     // TODO: Save to database
     
     return { success: true };
   } catch (error) {
-    console.error("Newsletter subscription error:", error);
+    logActionError("Newsletter subscription error", error);
     
     if (error instanceof Error && error.message.includes("already subscribed")) {
       return { 
