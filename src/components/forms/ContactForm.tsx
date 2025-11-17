@@ -5,7 +5,10 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Send, Loader2 } from "lucide-react";
 import { toast } from "react-hot-toast";
-import { contactFormSchema, type ContactFormData } from "@/lib/validations/contact";
+import {
+  contactFormSchema,
+  type ContactFormData,
+} from "@/lib/validations/contact";
 import { submitContactForm } from "@/app/actions/contact";
 import { Input, Textarea } from "@/components/ui/Form";
 import { GoldButton } from "@/components/ui/Button";
@@ -35,15 +38,19 @@ export function ContactForm() {
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
-    
+
     try {
       const result = await submitContactForm(data);
-      
+
       if (result.success) {
-        toast.success("Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.");
+        toast.success(
+          "Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız."
+        );
         reset();
       } else {
-        toast.error(result.error || "Bir hata oluştu. Lütfen tekrar deneyiniz.");
+        toast.error(
+          result.error || "Bir hata oluştu. Lütfen tekrar deneyiniz."
+        );
       }
     } catch (error) {
       console.error("Form submission error:", error);
@@ -64,7 +71,7 @@ export function ContactForm() {
             {...register("name")}
           />
         </div>
-        
+
         <div>
           <Input
             type="email"
@@ -86,7 +93,7 @@ export function ContactForm() {
             {...register("phone")}
           />
         </div>
-        
+
         <div>
           <label className="block text-sm font-medium text-navy-700 mb-2">
             Hizmet Türü
@@ -103,7 +110,9 @@ export function ContactForm() {
             ))}
           </select>
           {errors.serviceType && (
-            <p className="mt-1 text-sm text-destructive">{errors.serviceType.message}</p>
+            <p className="mt-1 text-sm text-destructive">
+              {errors.serviceType.message}
+            </p>
           )}
         </div>
       </div>
@@ -120,7 +129,7 @@ export function ContactForm() {
       <div>
         <Textarea
           label="Mesajınız"
-          placeholder="Uyuşmazlığınız hakkında kısaca bilgi veriniz..."
+          placeholder="Uyuşmazlığınız hakkında kısaca bilgi veriniz."
           rows={6}
           error={errors.message?.message}
           {...register("message")}
@@ -135,20 +144,26 @@ export function ContactForm() {
             {...register("kvkkConsent")}
           />
           <span className="text-sm text-navy-700 turkish-text">
-            <a href="/kvkk" target="_blank" className="text-primary hover:underline">
+            <a
+              href="/kvkk"
+              target="_blank"
+              className="text-primary hover:underline"
+            >
               KVKK Aydınlatma Metni
             </a>
             &apos;ni okudum ve kişisel verilerimin işlenmesini kabul ediyorum.
           </span>
         </label>
         {errors.kvkkConsent && (
-          <p className="mt-1 text-sm text-destructive">{errors.kvkkConsent.message}</p>
+          <p className="mt-1 text-sm text-destructive">
+            {errors.kvkkConsent.message}
+          </p>
         )}
       </div>
 
-      <GoldButton 
-        type="submit" 
-        size="lg" 
+      <GoldButton
+        type="submit"
+        size="lg"
         className="w-full"
         disabled={isSubmitting}
       >
