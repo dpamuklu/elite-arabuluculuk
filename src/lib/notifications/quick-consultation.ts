@@ -77,7 +77,7 @@ export async function sendQuickConsultationNotification(
     process.env.CONTACT_NOTIFICATION_EMAIL;
   const fromEmail =
     process.env.NOTIFICATIONS_FROM_EMAIL ||
-    "Elite Arabuluculuk <notifications@elitearabuluculuk.com>";
+    "Elite Arabuluculuk <info@elitearabuluculuk.com>";
 
   if (!apiKey) {
     throw new NotificationError("RESEND_API_KEY is not configured.");
