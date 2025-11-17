@@ -82,7 +82,7 @@ export default function Home() {
 
   const stats = [
     {
-      value: "2k+",
+      value: "2000+",
       label: "Başarılı Vaka",
       description: "Son 5 yılda çözülen uyuşmazlık",
     },
@@ -149,13 +149,15 @@ export default function Home() {
               </h1>
 
               <p className="text-base sm:text-lg lg:text-xl text-white/85 mb-10 font-light leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                Uyuşmazlıklarınızı hızlı, güvenilir ve mahkemeye gitmeden çözmek için
-                deneyimli ve lisanslı arabulucularımızla çalışın.
+                Uyuşmazlıklarınızı hızlı, güvenilir ve mahkemeye gitmeden çözmek
+                için deneyimli arabulucularımızla çalışın.
               </p>
 
               <div className="mb-12 flex justify-center lg:justify-start">
                 <div className="inline-block px-6 py-4 rounded-2xl border border-white/20 bg-white/5 text-white shadow-xl shadow-black/40 text-center md:text-left">
-                  <p className="text-lg font-semibold text-white/90">Av. Berkay Ergün</p>
+                  <p className="text-lg font-semibold text-white/90">
+                    Av. Berkay Ergün
+                  </p>
                   <p className="text-sm tracking-wide text-white/75">
                     Ticari Uyuşmazlıklar Arabulucusu – İstanbul
                   </p>
@@ -194,7 +196,9 @@ export default function Home() {
                   <div className="w-12 h-12 mx-auto mb-3 rounded-full border border-white/20 bg-white/10 flex items-center justify-center text-gold-400">
                     <CheckCircle className="w-6 h-6" aria-hidden="true" />
                   </div>
-                  <div className="text-3xl font-bold text-white mb-1">2000+</div>
+                  <div className="text-3xl font-bold text-white mb-1">
+                    2000+
+                  </div>
                   <div className="text-sm text-white/70 uppercase tracking-wide">
                     Çözülen Uyuşmazlık
                   </div>
@@ -227,7 +231,7 @@ export default function Home() {
               </div>
               <div className="absolute -bottom-8 -right-8 bg-navy-950/85 border border-white/20 text-white px-6 py-4 rounded-2xl backdrop-blur-md shadow-lg shadow-black/30">
                 <p className="text-sm uppercase tracking-[0.2em] text-white/80">
-                  Lisanslı
+                  Sicile Kayıtlı
                 </p>
                 <p className="text-2xl font-semibold">Arabulucu</p>
               </div>
@@ -242,9 +246,9 @@ export default function Home() {
           <div>
             <TypographyH2 className="mb-4">Ofisimizden Bir Kare</TypographyH2>
             <TypographyP className="text-lg">
-              Silivri&apos;deki modern ofisimizde yüz yüze görüşmelere ev sahipliği
-              yapıyoruz. Rahat ve güvenli ortamımız, tarafların yapıcı diyalog
-              kurmasına yardımcı olacak şekilde tasarlandı.
+              Silivri&apos;deki modern ofisimizde yüz yüze görüşmelere ev
+              sahipliği yapıyoruz. Rahat ve güvenli ortamımız, tarafların yapıcı
+              diyalog kurmasına yardımcı olacak şekilde tasarlandı.
             </TypographyP>
             <TypographyP className="mt-6">
               İlk toplantılarınızı ister çevrim içi ister ofisimizde
@@ -270,7 +274,10 @@ export default function Home() {
             </div>
           </div>
           <div className="relative">
-            <div className="absolute -inset-4 bg-gold-500/10 rounded-3xl blur-lg" aria-hidden="true"></div>
+            <div
+              className="absolute -inset-4 bg-gold-500/10 rounded-3xl blur-lg"
+              aria-hidden="true"
+            ></div>
             <div className="relative overflow-hidden rounded-3xl shadow-legal-lg border border-white/60">
               <Image
                 src="/images/ofis.jpg"
@@ -464,7 +471,10 @@ export default function Home() {
               className="border-white bg-transparent text-white hover:bg-white hover:text-primary-800"
               asChild
             >
-              <Link href="/hakkimizda" className="inline-flex items-center justify-center gap-2">
+              <Link
+                href="/hakkimizda"
+                className="inline-flex items-center justify-center gap-2"
+              >
                 Hakkımızda Daha Fazla
               </Link>
             </Button>

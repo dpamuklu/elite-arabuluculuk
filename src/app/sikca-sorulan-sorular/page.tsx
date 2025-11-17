@@ -94,7 +94,7 @@ const faqSections: FAQSection[] = [
       {
         question: "Anlaşma sağlanamazsa ne olur?",
         answer:
-          "Taraflar uzlaşamazsa arabulucu sona erdirme tutanağı düzenler. Zorunlu arabuluculuk hallerinde bu tutanak, dava açarken mahkemeye sunulması gereken zorunlu belgedir. Sonrasında taraflar dilerse yargı yoluna devam edebilirler.",
+          "Arabulucu süreci sona erdiren “son tutanak” belgesini düzenler. Zorunlu arabuluculuk hallerinde bu tutanak, dava açarken mahkemeye sunulması gereken zorunlu belgedir. Sonrasında taraflar dilerse yargı yoluna devam edebilirler.",
       },
     ],
   },
@@ -154,17 +154,20 @@ const faqSections: FAQSection[] = [
 const quickFacts: QuickFact[] = [
   {
     title: "Gizlilik İlkesi",
-    description: "Süreç boyunca paylaşılan bilgiler yalnızca tarafların onayıyla kullanılabilir.",
+    description:
+      "Süreç boyunca paylaşılan bilgiler yalnızca tarafların onayıyla kullanılabilir.",
     icon: Shield,
   },
   {
     title: "Tarafsız Arabulucu",
-    description: "Arabulucu hiçbir taraftan yana olmaz; çözüm alternatiflerini tarafların geliştirmesini sağlar.",
+    description:
+      "Arabulucu hiçbir taraftan yana olmaz; çözüm alternatiflerini tarafların geliştirmesini sağlar.",
     icon: Users,
   },
   {
     title: "Esnek Toplantılar",
-    description: "Zaman ve mekân taraflara göre uyarlanır; gerekirse akşam veya hafta sonu oturumları yapılabilir.",
+    description:
+      "Zaman ve mekân taraflara göre uyarlanır; gerekirse akşam veya hafta sonu oturumları yapılabilir.",
     icon: MessageSquare,
   },
 ];
@@ -223,7 +226,9 @@ export default function SikcaSorulanSorularPage() {
             </div>
           </div>
           <div className="bg-white rounded-2xl shadow-legal-lg p-8 border border-border">
-            <TypographyH3 className="mb-4">Aradığınız başlığı seçin</TypographyH3>
+            <TypographyH3 className="mb-4">
+              Aradığınız başlığı seçin
+            </TypographyH3>
             <TypographyP className="mb-6">
               Soruları dört ana başlık altında topladık. Genel bilgilerden ücret
               detaylarına kadar dilediğiniz bölüme göz atabilirsiniz.

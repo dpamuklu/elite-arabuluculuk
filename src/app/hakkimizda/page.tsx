@@ -92,8 +92,8 @@ export default function HakkimizdaPage() {
               Elite Arabuluculuk Hakkında
             </TypographyH1>
             <TypographyLead className="mb-8">
-              10 yılı aşkın deneyimimiz ve 2k+ başarılı vakamızla Türkiye&apos;nin
-              önde gelen arabuluculuk firmasıyız.
+              10 yılı aşkın deneyimimiz ve 2k+ başarılı vakamızla
+              Türkiye&apos;nin önde gelen arabuluculuk firmasıyız.
             </TypographyLead>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -131,7 +131,7 @@ export default function HakkimizdaPage() {
                 karşılıklı anlaşma temelli çözümler üretiyoruz.
               </TypographyP>
               <TypographyP className="mb-8">
-                Deneyimli ve sertifikalı arabulucu kadromuzla, her türlü
+                Deneyimli ve sicile kayıtlı arabulucu kadromuzla, her türlü
                 uyuşmazlığa özel çözümler geliştiriyor, tarafların menfaatlerini
                 koruyarak sürdürülebilir anlaşmalar sağlıyoruz.
               </TypographyP>
